@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ4PGMC5DY"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GQ4PGMC5DY');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1044341684067916');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1044341684067916&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-Mart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 1395px;
+            margin: auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #f00808;
+        }
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .menu-icon, .cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+        .three-icon {
+            width: 100%; /* Adjust size as needed */
+            height: 40px;
+            margin-top: 10px;
+        }
+        .cart-icon {
+            position: relative;
+        }
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            border-radius: 50%;
+            padding: 2px 6px;
+        }
+        .banner img {
+            width: 100%;
+          
+            display:block;
+        }
+        .second-image img {
+            width: 100%;
+            max-height: 500px; /* Ensuring it doesn't increase on larger screens */
+            object-fit:fill;
+            display: block;
+            margin-bottom: 10px;
+        }
+      .search-box {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: white; /* Text color */
+    text-align: center; /* Centered text */
+    border: 1px solid #0756e9;
+    background-color: #0756e9; /* Blue background */
+    border-radius: 0; /* No rounded corners */
+}
+
+.search-box::placeholder {
+    color: white; /* Placeholder color white */
+    text-align: center; /* Placeholder centered */
+}
+
+
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0px;
+          
+            padding: 0px;
+          
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            border-radius: 0px;
+            background: #fff;
+        }
+        .product img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+        .product p {
+         
+            text-align: left;
+            align-self: flex-start;
+           font-size: 14px;
+        }
+        
+      
+
+        .product .price {
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .buy-now {
+            display: inline-block;
+            padding: 10px 40px;
+            margin-top: 10px;
+            background: #0756e9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+
+        .old-price {
+    text-decoration: line-through;
+    color: black; /* Optional: Thoda halka dikhane ke liye */
+}
+
+.discount {
+    color: green;
+    font-weight: bold;
+}
+
+.product .deal {
+    color: black;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.product .deal:hover {
+    color: blue; /* Hover par color change */
+    font-size: 14px; /* Hover par text thoda bada ho */
+    font-weight: bold; /* Bold effect */
+    cursor: pointer; /* Mouse pointer change */
+}
+
+
+
+    </style>
+</head>
+<body>
+
+      
+    <div class="container">
+        
+        <div class="header">
+           
+            <div class="left-section">
+                <div class="menu-icon">☰</div>
+                <img src="image/smartlogo.png" alt="Three Icon" class="three-icon">
+            </div>
+            <div class="cart-icon">🛒<span class="cart-badge">1</span></div>
+        </div>
+        <!-- <div class="banner">
+            <img src="image1.jpg" alt="Banner Image">
+        </div> -->
+        <input type="text" class="search-box" placeholder="Everything Everyday at Lowest Price...">
+        <div class="second-image">
+            <img src="image/smart1.jpg" alt="Second Image">
+        </div>
+   
+   
+        <!-- New Product Section -->
+     <div class="product-grid">
+       
+    
+
+
+        <div class="product">
+            <img src="image/p1.jpg" alt="Product 1">
+            <p>3Kg Combo Dry Fruits Pack</p>
+            <p><span class="old-price">₹1899</span> <span class="discount">78.99% Off</span></p>
+
+            <p class="price">Now ₹399</p>
+            <p class="deal">Limited time deal</p>
+            <a href="dryfruits.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/3.jpg" alt="Product 1">
+            <p>Fortune Soya Health Ref...</p>
+            <p><span class="old-price">₹5498</span> <span class="discount">91.51% Off</span></p>
+
+            <p class="price">Now ₹467</p>
+            <p class="deal">Limited time deal</p>
+            <a href="fortunesoya.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/4.jpg" alt="Product 1">
+            <p>Aashirvaad Atta 5kg,...</p>
+            <p><span class="old-price">₹3999</span> <span class="discount">90.77.99% Off</span></p>
+
+            <p class="price">Now ₹369</p>
+            <p class="deal">Limited time deal</p>
+            <a href="AashirvaadAtta.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/5.jpg" alt="Product 1">
+            <p>Dmart Offer today: Ge...</p>
+            <p><span class="old-price">₹1799</span> <span class="discount">77.82% Off</span></p>
+
+            <p class="price">Now ₹399</p>
+            <p class="deal">Limited time deal</p>
+            <a href="dmartoffertoday.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/6.jpg" alt="Product 1">
+            <p>Dmart Offer today onl...</p>
+            <p><span class="old-price">₹1299</span> <span class="discount">70.28% Off</span></p>
+
+            <p class="price">Now ₹386</p>
+            <p class="deal">Limited time deal</p>
+            <a href="fortunedmartoffertoday.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/7.jpg" alt="Product 1">
+            <p>Dmart Offer today onl...</p>
+            <p><span class="old-price">₹995</span> <span class="discount">80% Off</span></p>
+
+            <p class="price">Now ₹199</p>
+            <p class="deal">Limited time deal</p>
+            <a href="fortunecharminal.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/8.webp" alt="Product 1">
+            <p>Beige Net Saree</p>
+            <p><span class="old-price">₹2499</span> <span class="discount">84.03% Off</span></p>
+
+            <p class="price">Now ₹399</p>
+            <p class="deal">Limited time deal</p>
+            <a href="biegenetsaree.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/9.webp" alt="Product 1">
+            <p>Women Printed Pure</p>
+            <p><span class="old-price">₹1499</span> <span class="discount">86.72% Off</span></p>
+
+            <p class="price">Now ₹199</p>
+            <p class="deal">Limited time deal</p>
+            <a href="womenprinted.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/10.webp" alt="Product 1">
+            <p>Drawstring Rib Waist...</p>
+            <p><span class="old-price">₹2499</span> <span class="discount">88.04% Off</span></p>
+
+            <p class="price">Now ₹299</p>
+            <p class="deal">Limited time deal</p>
+            <a href="drawstrinfrib.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/11.webp" alt="Product 1">
+            <p>RedTape Polo T-shirt f....</p>
+            <p><span class="old-price">₹1499</span> <span class="discount">80.05% Off</span></p>
+
+            <p class="price">Now ₹299</p>
+            <p class="deal">Limited time deal</p>
+            <a href="redtapepolo.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/12.webp" alt="Product 1">
+            <p>MuscleBlaze Biozyme...</p>
+            <p><span class="old-price">₹2499</span> <span class="discount">84.03% Off</span></p>
+
+            <p class="price">Now ₹399</p>
+            <p class="deal">Limited time deal</p>
+            <a href="muscleblaze.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/13.webp" alt="Product 1">
+            <p>FUGO@ by Nice Goods</p>
+            <p><span class="old-price">₹12999</span> <span class="discount">97.7% Off</span></p>
+
+            <p class="price">Now ₹299</p>
+            <p class="deal">Limited time deal</p>
+            <a href="fugogoods.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/14.webp" alt="Product 1">
+            <p>JBL Boombox 2 Deep B</p>
+            <p><span class="old-price">₹19899</span> <span class="discount">96.99% Off</span></p>
+
+            <p class="price">Now ₹599</p>
+            <p class="deal">Limited time deal</p>
+            <a href="jblboombox.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/15.webp" alt="Product 1">
+            <p>PHILIPS MG7715/15...</p>
+            <p><span class="old-price">₹3799</span> <span class="discount">93.45% Off</span></p>
+
+            <p class="price">Now ₹249</p>
+            <p class="deal">Limited time deal</p>
+            <a href="philipstreamer.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/16.webp" alt="Product 1">
+            <p>Original Adivasi Hair Oil</p>
+            <p><span class="old-price">₹999</span> <span class="discount">85.09% Off</span></p>
+
+            <p class="price">Now ₹149</p>
+            <p class="deal">Limited time deal</p>
+            <a href="originalaadivasi.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/17.webp" alt="Product 1">
+            <p>Dmart 3x Combo Pac...</p>
+            <p><span class="old-price">₹1699</span> <span class="discount">84.34% Off</span></p>
+
+            <p class="price">Now ₹266</p>
+            <p class="deal">Limited time deal</p>
+            <a href="dmart3xcombo.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/18.webp" alt="Product 1">
+            <p>Fargo Handbag For W...</p>
+            <p><span class="old-price">₹2999</span> <span class="discount">95.03% Off</span></p>
+
+            <p class="price">Now ₹149</p>
+            <p class="deal">Limited time deal</p>
+            <a href="fargohandbag.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/19.webp" alt="Product 1">
+            <p>Blue Heaven Matte Lo...</p>
+            <p><span class="old-price">₹39</span> <span class="discount">90.23% Off</span></p>
+
+            <p class="price">Now ₹39</p>
+            <p class="deal">Limited time deal</p>
+            <a href="blueheavenmatte.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/20.webp" alt="Product 1">
+            <p>Tata Tea Gold Premiu...</p>
+            <p><span class="old-price">₹599</span> <span class="discount">88.48% Off</span></p>
+
+            <p class="price">Now ₹69</p>
+            <p class="deal">Limited time deal</p>
+            <a href="tatatea.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/21.webp" alt="Product 1">
+            <p>Safari Polypropylene...</p>
+            <p><span class="old-price">₹14986</span> <span class="discount">96% Off</span></p>
+
+            <p class="price">Now ₹599</p>
+            <p class="deal">Limited time deal</p>
+            <a href="safaripolybags.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/22.webp" alt="Product 1">
+            <p>ISABRELLA Umbrella...</p>
+            <p><span class="old-price">₹1599</span> <span class="discount">93.81% Off</span></p>
+
+            <p class="price">Now ₹99</p>
+            <p class="deal">Limited time deal</p>
+            <a href="isabrellaUmbrella.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/23.webp" alt="Product 1">
+            <p>Milton Aqua 1000 Sta...</p>
+            <p><span class="old-price">₹1323</span> <span class="discount">83.75% Off</span></p>
+
+            <p class="price">Now ₹215</p>
+            <p class="deal">Limited time deal</p>
+            <a href="miltonaqua.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/24.webp" alt="Product 1">
+            <p>Panasonic 20L Solo</p>
+            <p><span class="old-price">₹6790</span> <span class="discount">89.03% Off</span></p>
+
+            <p class="price">Now ₹745</p>
+            <p class="deal">Limited time deal</p>
+            <a href="panasonicmicrowave.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/25.webp" alt="Product 1">
+            <p>Kore Pvc 20-100 Kg...</p>
+            <p><span class="old-price">₹2099</span> <span class="discount">76.85% Off</span></p>
+
+            <p class="price">Now ₹486</p>
+            <p class="deal">Limited time deal</p>
+            <a href="korepvcgym.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/26.webp" alt="Product 1">
+            <p>Kore Pvc 10-40 Kg H...</p>
+            <p><span class="old-price">₹4099</span> <span class="discount">79.04% Off</span></p>
+
+            <p class="price">Now ₹859</p>
+            <p class="deal">Limited time deal</p>
+            <a href="korepvcgym2.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/27.webp" alt="Product 1">
+            <p>V-Gaurd Windle Deco...</p>
+            <p><span class="old-price">₹3390</span> <span class="discount">70.94% Off</span></p>
+
+            <p class="price">Now ₹985</p>
+            <p class="deal">Limited time deal</p>
+            <a href="vgaurdfan.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/28.webp" alt="Product 1">
+            <p>atomberg Renesa Enz...</p>
+            <p><span class="old-price">₹5365</span> <span class="discount">69.21% Off</span></p>
+
+            <p class="price">Now ₹1652</p>
+            <p class="deal">Limited time deal</p>
+            <a href="atombergfan.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/29.webp" alt="Product 1">
+            <p>Whirlpool 235L 2 Sta...</p>
+            <p><span class="old-price">₹30200</span> <span class="discount">81.86% Off</span></p>
+
+            <p class="price">Now ₹5478</p>
+            <p class="deal">Limited time deal</p>
+            <a href="whirlpoolfridge.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/30.webp" alt="Product 1">
+            <p>Godrej 223 L 2 Star N...</p>
+            <p><span class="old-price">₹33690</span> <span class="discount">79.53% Off</span></p>
+
+            <p class="price">Now ₹6896</p>
+            <p class="deal">Limited time deal</p>
+            <a href="godrejfridge.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+        <div class="product">
+            <img src="image/31.webp" alt="Product 1">
+            <p>Novamax Rambo 100...</p>
+            <p><span class="old-price">₹21990</span> <span class="discount">77.74% Off</span></p>
+
+            <p class="price">Now ₹4896</p>
+            <p class="deal">Limited time deal</p>
+            <a href="novamaxcooler.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="product-grid">
+       
+       
+        <div class="product">
+            <img src="image/32.webp" alt="Product 1">
+            <p>Voltas Grand 72 E De...</p>
+            <p><span class="old-price">₹19390</span> <span class="discount">64.44% Off</span></p>
+
+            <p class="price">Now ₹6895</p>
+            <p class="deal">Limited time deal</p>
+            <a href="voltasgrandcooler.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+        
+        <div class="product">
+            <img src="image/ac.webp" alt="Product 1">
+            <p>Voltas 1.5 ton 3 Star, Inverter AC</p>
+            <p><span class="old-price">₹28899</span> <span class="discount">78.99% Off</span></p>
+
+            <p class="price">Now 9499</p>
+            <p class="deal">Limited time deal</p>
+            <a href="airconditionar.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+        <div class="product">
+            <img src="image/patanjalighee.jpeg" alt="Product 1">
+            <p>Patanjali Desi Ghee 1kg+1kg...</p>
+            <p><span class="old-price">₹798</span> <span class="discount">91.51% Off</span></p>
+
+            <p class="price">Now ₹267</p>
+            <p class="deal">Limited time deal</p>
+            <a href="patanjalidesighee.html" class="buy-now">Buy Now</a>
+            <p class="deal">Free Delivery in Two Days</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="second-image">
+        <img src="image/termcondition.png" alt="Second Image">
+    </div>
+
+</div>
+</body>
+</html>

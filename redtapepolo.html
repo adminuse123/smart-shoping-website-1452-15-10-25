@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1044341684067916');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1044341684067916&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-Mart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 1395px;
+            margin: auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #f00808;
+        }
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .menu-icon, .cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+            color: #266D37;
+        }
+         .three-icon {
+            width: 100%;
+            height: 40px;
+            margin-top: 10px;
+        }
+        .cart-icon {
+            position: relative;
+        }
+        .cart-badge1 {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            border-radius: 50%;
+            padding: 2px 6px;
+        }
+        .banner img {
+            width: 100%;
+            display:block;
+        }
+        .second-image img {
+            width: 100%;
+            max-height: 500px;
+            object-fit:fill;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .plus-box {
+            width: 15px;
+            height: 20px;
+            background-color: #f1eeee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0%;
+            border: 2px solid #f1eeee;
+            cursor: pointer;
+         
+        }
+        .plus-symbol {
+            font-size: 20px;
+            color: #0b0eb6;
+            font-weight: bold;
+        }
+        .product-details {
+            text-align: left;
+            padding: 15px;
+        }
+        .price {
+            font-size: 24px;
+            color: #000;
+            font-weight: bold;
+        }
+        .old-price {
+    text-decoration: line-through;
+    color: rgb(95, 93, 93);
+    font-weight: normal;
+    font-size: 16px; /* Optional: Thoda halka dikhane ke liye */
+}
+        .discount {
+            color:rgb(95, 93, 93);
+            font-size: 16px;
+        }
+        .offers {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .warranty {
+            margin-top: 10px;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-bottom: 80px;
+        }
+
+        .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Gap between the buttons */
+    padding: 10px; /* Padding at the bottom */
+    background-color: #ffffff; /* You can change the background color as needed */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adding shadow to make it look nice */
+}
+
+.cart-button, 
+.buy-now {
+    flex: 1; /* Equal width for both buttons */
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.cart-button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.buy-now {
+    background-color: #0756e9;
+    border: 1px solid red;
+    color: white;
+}
+
+        .rating-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgb(95, 93, 93);;
+            margin-bottom: 10px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .rating-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #058d42;
+            color: white;
+            padding: 4px;
+            font-size: 10px;
+            width: 30px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+h3{
+    margin-top: 15px;
+}
+
+.tc {
+            color: rgb(17, 135, 204);
+            font-weight: bold;
+        }
+
+        .tag-image {
+    width: 15px; /* Adjust width as needed */
+    height: 15px; /* Maintains aspect ratio */
+ margin-top: 5px;
+ margin-bottom: -10px;
+ margin-left: 320px;
+}
+
+
+
+.scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: #02775a;
+            color: white;
+            border-radius: 0%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .scroll-to-top:hover {
+            background: #046a32;
+        }
+
+        .cart-button {
+        position: relative;
+        padding: 15px 30px;
+        font-size: 18px;
+        background-color: white;
+        color: black;
+        border: 1px solid white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .cart-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background: red;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden; /* Default hidden */
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="left-section">
+                <img src="image/smartlogo.png" alt="Three Icon" class="three-icon">
+            </div>
+            <div class="right-section">
+                <div class="plus-box">
+                    <span class="plus-symbol">+</span>
+                </div>
+                <div class="cart-icon">🛒<span class="cart-badge1">2</span></div>
+            </div>
+        </div>
+        <div class="second-image">
+            <img src="image/redtapepolo.jpeg" alt="Second Image">
+        </div>
+        <div class="product-details">
+            <h3>RedTape Polo T-shirt for...</h3>
+            <div class="rating-container">
+                <div class="rating-box">
+                    <span>4.3</span>
+                    <span>⭐</span>
+                </div>
+                <span>727 Ratings & 62 Reviews</span>
+            </div>
+            <p class="price">₹299 <span class="old-price">₹1499</span> <span class="discount"> 80.05% Off</span></p>
+            <h3>Coupons for you</h3>
+            <p class="offers"><strong>Special Price:</strong> Extra 30% off upto ₹50 on 1 item(s) (Inclusive of discount)  <span class="tc" onclick="scrollToTop()">T&C</span></p>
+            <h3>Available Offers</h3>
+            <!-- <div class="tag">
+                <img src="image/tag.png" alt="Tag Image">
+            </div> -->
+            <img src="image/tag.png" alt="Tag Image" class="tag-image">
+          
+            <p class="offers">
+                <strong>Bank Offer:</strong> Additional ₹2000 off on HDFC Bank Credit Card 
+                <span class="tc" onclick="scrollToTop()">T&C</span>
+
+                <!-- <img src="image/tag.png" alt="Tag Image" class="tag-image"> -->
+            </p>
+            <img src="image/tag.png" alt="Tag Image" class="tag-image">
+             <p class="offers"><strong>Partner Offer:</strong> Buy this product and get ₹500 off on Flipkart Furniture <span class="tc" onclick="scrollToTop()">Know More</span>
+             </p>
+             <img src="image/tag.png" alt="Tag Image" class="tag-image">
+          
+             <p class="offers"><strong>Partner Offer:</strong> Sign up for Flipkart Pay Later and get Flipkart Gift Card worth ₹100  <span class="tc" onclick="scrollToTop()">Know More</span>
+             </p>
+             <img src="image/calender.png" alt="Tag Image" class="tag-image">
+          
+             <p class="offers"><strong>No cost EMI ₹2,990/month </strong>Standard EMI also available  <span class="tc" onclick="scrollToTop()">View Plan</span>
+             </p>
+            <p class="warranty"><strong>1 Year Warranty </strong> <span class="tc" onclick="scrollToTop()">Know More</span>
+            </p>
+            <div class="button-container">
+                <button id="addToCartBtn" class="cart-button" onclick="addToCart()">
+                    Add to Cart
+                    <span id="cartCount" class="cart-badge">0</span>
+                </button>
+                
+                <script>
+                    let cartCount = 0;
+                
+                    function addToCart() {
+                        cartCount++; // Increase count
+                        let badge = document.getElementById("cartCount");
+                
+                        badge.innerText = cartCount; // Update count
+                        badge.style.visibility = "visible"; // Show badge
+                    }
+                </script>
+                
+                <a href="OrderBilling.html" class="button buy-now">Buy Now</a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+ <!-- Scroll to Top Button -->
+ <div class="scroll-to-top" onclick="scrollToTop()">&#8679;</div>
+
+ <script>
+     // Function to scroll to the top
+     function scrollToTop() {
+         window.scrollTo({ top: 0, behavior: 'smooth' });
+     }
+
+     // Show/hide button based on scroll
+     window.onscroll = function () {
+         var button = document.querySelector(".scroll-to-top");
+         if (document.documentElement.scrollTop > 300) {
+             button.style.display = "flex";
+         } else {
+             button.style.display = "none";
+         }
+     };
+ </script>
+
+
+
+</body>
+</html>
